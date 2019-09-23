@@ -67,7 +67,7 @@
        ;;ansible
        ;;debugger          ; FIXME stepping through code, to help you add bugs
        ;;direnv
-       ;;docker
+       docker
        ;;editorconfig      ; let someone else argue about tabs vs spaces
        ein               ; tame Jupyter notebooks with emacs
        eval              ; run code, run (also, repls)
@@ -92,7 +92,7 @@
        :lang
        ;;agda              ; types of types of types of types...
        ;;assembly          ; assembly for fun or debugging
-       ;;cc                ; C/C++/Obj-C madness
+       cc                ; C/C++/Obj-C madness
        clojure           ; java with a lisp
        ;;common-lisp       ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
@@ -134,7 +134,8 @@
        ;;racket            ; a DSL for DSLs
        ;;rest              ; Emacs as a REST client
        ;;ruby              ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
-       ;;rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
+       (rust
+        +lsp)              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
        ;;scheme            ; a fully conniving family of lisps
        sh                ; she sells {ba,z,fi}sh shells on the C xor
@@ -170,18 +171,35 @@
        ;; provides a Spacemacs-inspired keybinding scheme and a smartparens
        ;; config. Use it as a reference for your own modules.
        (default +bindings +smartparens))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(projectile-indexing-method (quote hybrid))
  '(safe-local-variable-values
    (quote
-    ((cider-cljs-repl-types
+    ((helm-make-arguments . "-j7")
+     (projectile-project-configure-cmd . "cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..")
+     (projectile-project-run-cmd . "./run.sh")
+     (projectile-project-name . "adbGL")
+     (eval setq projectile-project-test-cmd
+           (function helm-ctest)
+           projectile-project-compilation-cmd
+           (function helm-make-projectile)
+           projectile-project-compilation-dir "build" helm-make-build-dir
+           (projectile-compilation-dir)
+           helm-ctest-dir
+           (projectile-compilation-dir))
+     (cider-default-cljs-repl . edge)
+     (cider-clojure-cli-global-options . "-A:dev:test:data:build:dev/build")
+     (cider-cljs-repl-types
       (edge "(do (require 'dev-extras) ((resolve 'dev-extras/cljs-repl)))"))
      (cider-repl-init-code "(dev)")
      (cider-ns-refresh-after-fn . "dev-extras/resume")
      (cider-ns-refresh-before-fn . "dev-extras/suspend")))))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
