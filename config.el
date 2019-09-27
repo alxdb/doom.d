@@ -22,7 +22,7 @@
 ;;; Package conf
 
 ;; projectile
-(after! projectile-mode
+(after! projectile
   (setq projectile-project-search-path (cond (IS-LINUX "~/projects")
                                              (IS-MAC "~/Documents/Projects")))
   (setq projectile-indexing-method 'hybrid))
