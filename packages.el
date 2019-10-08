@@ -13,4 +13,4 @@
 
 (package! adoc-mode)
 (package! meson-mode)
-(package! csound-mode)
+(package! tidal)

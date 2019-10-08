@@ -177,6 +177,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("071f5702a5445970105be9456a48423a87b8b9cfa4b1f76d15699b29123fb7d8" default)))
  '(projectile-indexing-method (quote hybrid))
  '(safe-local-variable-values
    (quote
@@ -205,4 +208,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(rainbow-delimiters-depth-1-face ((t (:foreground "#fabd2f"))))
+ '(rainbow-delimiters-depth-2-face ((t (:foreground "#d79921"))))
+ '(rainbow-delimiters-depth-3-face ((t (:foreground "#b57614"))))
+ '(rainbow-delimiters-depth-4-face ((t (:foreground "#83a598"))))
+ '(rainbow-delimiters-depth-5-face ((t (:foreground "#458588"))))
+ '(rainbow-delimiters-depth-6-face ((t (:foreground "#076678"))))
+ '(rainbow-delimiters-depth-7-face ((t (:foreground "#8ec07c"))))
+ '(rainbow-delimiters-depth-8-face ((t (:foreground "#689d6a"))))
+ '(rainbow-delimiters-depth-9-face ((t (:foreground "#427b58")))))
