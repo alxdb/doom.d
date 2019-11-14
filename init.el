@@ -113,9 +113,9 @@
        ;;javascript        ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)
-       ;;latex             ; writing papers in Emacs has never been so fun
+       latex             ; writing papers in Emacs has never been so fun
        ;;ledger            ; an accounting system in Emacs
-       ;;lua               ; one-based indices? one-based indices
+       lua               ; one-based indices? one-based indices
        markdown          ; writing docs for people to ignore
        ;;nim               ; python + lisp at the speed of c
        ;;nix               ; I hereby declare "nix geht mehr!"
@@ -145,23 +145,6 @@
        ;;web               ; the tubes
        ;;vala              ; GObjective-C
 
-       :email
-       ;;(mu4e +gmail)       ; WIP
-       ;;notmuch             ; WIP
-       ;;(wanderlust +gmail) ; WIP
-
-       ;; Applications are complex and opinionated modules that transform Emacs
-       ;; toward a specific purpose. They may have additional dependencies and
-       ;; should be loaded late.
-       :app
-       ;;calendar
-       ;;irc               ; how neckbeards socialize
-       ;;(rss +org)        ; emacs as an RSS reader
-       ;;twitter           ; twitter client https://twitter.com/vnought
-       ;;(write            ; emacs for writers (fiction, notes, papers, etc.)
-       ;; +wordnut         ; wordnet (wn) search
-       ;; +langtool)       ; a proofreader (grammar/style check) for Emacs
-
        :config
        ;; For literate config users. This will tangle+compile a config.org
        ;; literate config in your `doom-private-dir' whenever it changes.
@@ -179,11 +162,20 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("071f5702a5445970105be9456a48423a87b8b9cfa4b1f76d15699b29123fb7d8" default)))
+    ("70ed3a0f434c63206a23012d9cdfbe6c6d4bb4685ad64154f37f3c15c10f3b90" "071f5702a5445970105be9456a48423a87b8b9cfa4b1f76d15699b29123fb7d8" default)))
  '(projectile-indexing-method (quote hybrid))
  '(safe-local-variable-values
    (quote
-    ((helm-make-arguments . "-j7")
+    ((projectile-project-compilation-cmd . "cd build && make")
+     (projectile-project-compilation-cmd . "make -C build")
+     (projectile-project-run-cmd . "./main")
+     (projectile-project-configure-cmd . "cmake ..")
+     (projectile-project-compilation-cmd . "make")
+     (projectile-project-compilation-dir . "./build")
+     (projectile-project-run-cmd . "./build/main")
+     (projectile-project-configure-cmd . "cmake -S . -B build")
+     (projectile-project-configure-cmd . "cmake -DCMAKE_COMPILE_COMMANDS=ON -S . -B build")
+     (helm-make-arguments . "-j7")
      (projectile-project-configure-cmd . "cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..")
      (projectile-project-run-cmd . "./run.sh")
      (projectile-project-name . "adbGL")
