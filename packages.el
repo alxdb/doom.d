@@ -6,5 +6,4 @@
   (package! flycheck-joker :disable t)
   (package! flycheck-clj-kondo))
 
-(package! adoc-mode)
 (package! darktooth-theme)

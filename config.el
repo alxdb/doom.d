@@ -3,11 +3,11 @@
 ;;; core-ui
 (setq doom-theme (cond (IS-LINUX 'doom-gruvbox)
                        (IS-MAC 'doom-city-lights))
-      doom-font (font-spec :family (cond (IS-LINUX "Input Mono")
+      doom-font (font-spec :family (cond (IS-LINUX "Monospace")
                                          (IS-MAC "SF Mono"))
-                           :size (cond (IS-LINUX 16)
+                           :size (cond (IS-LINUX 18)
                                        (IS-MAC 12)))
-      doom-big-font (font-spec :family (cond (IS-LINUX "Input Mono")
+      doom-big-font (font-spec :family (cond (IS-LINUX "Monospace")
                                              (IS-MAC "SF Mono"))
                                :size (cond (IS-LINUX 32)
                                            (IS-MAC 16)))
@@ -37,9 +37,6 @@
 (add-hook! 'cider-repl-mode-hook #'lispy-mode #'lispyville-mode #'rainbow-delimiters-mode)
 (map! (:map cider-repl-mode-map
         :g "M-n" 'cider-repl-next-input))
-
-;;; ascii-doc
-(add-to-list 'auto-mode-alist (cons "\\.adoc\\'" 'adoc-mode))
 
 ;;; SQL
 (set-popup-rule! "\\*SQL\\*" :kill nil :ttl nil)
