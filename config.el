@@ -3,7 +3,7 @@
 ;; Global Settings
 (setq doom-theme (cond (IS-LINUX 'doom-gruvbox)
                        (IS-MAC 'doom-one))
-      doom-font (font-spec :family (cond (IS-LINUX "Monospace")
+      doom-font (font-spec :family (cond (IS-LINUX "Input Mono")
                                          (IS-MAC "SF Mono"))
                            :size (cond (IS-LINUX 18)
                                        (IS-MAC 13))
