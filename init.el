@@ -85,7 +85,8 @@
  '(projectile-indexing-method (quote hybrid))
  '(safe-local-variable-values
    (quote
-    ((projectile-project-compilation-cmd . "cd build && make")
+    ((cider-clojure-cli-global-options . "-A:dev")
+     (projectile-project-compilation-cmd . "cd build && make")
      (projectile-project-compilation-cmd . "make -C build")
      (projectile-project-run-cmd . "./main")
      (projectile-project-configure-cmd . "cmake ..")

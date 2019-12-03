@@ -1,21 +1,21 @@
 ;;; .doom.d/config.el -*- lexical-binding: t; -*-
 
-;;; core-ui
+;; Global Settings
 (setq doom-theme (cond (IS-LINUX 'doom-gruvbox)
-                       (IS-MAC 'doom-city-lights))
+                       (IS-MAC 'doom-one))
       doom-font (font-spec :family (cond (IS-LINUX "Monospace")
                                          (IS-MAC "SF Mono"))
                            :size (cond (IS-LINUX 18)
-                                       (IS-MAC 12)))
-      doom-big-font (font-spec :family (cond (IS-LINUX "Monospace")
-                                             (IS-MAC "SF Mono"))
-                               :size (cond (IS-LINUX 32)
-                                           (IS-MAC 16)))
+                                       (IS-MAC 13))
+                           :weight (cond (IS-LINUX 'normal)
+                                         (IS-MAC 'light)))
       doom-variable-pitch-font (font-spec :family (cond (IS-LINUX "Input Sans")
                                                         (IS-MAC "Helvetica Neue"))
                                           :size (cond (IS-LINUX 16)
-                                                      (IS-MAC 12))))
+                                                      (IS-MAC 13))))
 (setq rainbow-delimiters-max-face-count 9)
+(setq +workspaces-on-switch-project-behavior t)
+
 ;;; workspaces
 (setq +workspaces-on-switch-project-behavior t)
 
@@ -35,6 +35,7 @@
   (require 'flycheck-clj-kondo))
 (set-popup-rule! "\\*cider-scratch\\*" :ignore t)
 (add-hook! 'cider-repl-mode-hook #'lispy-mode #'lispyville-mode #'rainbow-delimiters-mode)
+(add-hook! 'clojure-mode-hook #'prettify-symbols-mode)
 (map! (:map cider-repl-mode-map
         :g "M-n" 'cider-repl-next-input))
 
