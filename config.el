@@ -30,7 +30,7 @@
 
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type 'relative)
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
@@ -48,3 +48,16 @@
 ;;
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
+
+(setq +workspaces-on-switch-project-behavior t)
+(setq +zen-text-scale 0)
+
+(add-hook! 'doom-load-theme-hook :append
+ (doom-themes-set-faces 'doom-gruvbox
+    '(default :background "#282828")
+    '(solaire-default-face :background "#1d2021")
+    '(mode-line :background "#3a3a3a")
+    '(font-lock-preprocessor-face :foreground "#ff8700")))
+
+(after! rustic
+ (remove-hook 'rustic-mode-hook #'rainbow-delimiters-mode))
