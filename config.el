@@ -18,7 +18,7 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "monospace" :size 18))
+(setq doom-font (font-spec :family "monospace" :size 20))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -26,7 +26,7 @@
 (setq doom-theme 'doom-gruvbox)
 
 ;; If you intend to use org, it is recommended you change this!
-(setq org-directory "~/org/")
+(setq org-directory "~/doc/org/")
 
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
@@ -49,9 +49,8 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
-(setq +workspaces-on-switch-project-behavior t)
-(setq +zen-text-scale 0)
-
+; core
+;; ui
 (add-hook! 'doom-load-theme-hook :append
  (doom-themes-set-faces 'doom-gruvbox
     '(default :background "#282828")
@@ -59,5 +58,26 @@
     '(mode-line :background "#3a3a3a")
     '(font-lock-preprocessor-face :foreground "#ff8700")))
 
+
+; modules
+;; ui
+;;; workspaces
+(setq +workspaces-on-switch-project-behavior t)
+;;; zen
+(setq +zen-text-scale 0)
+
+;; lang
+;;; rust
 (after! rustic
  (remove-hook 'rustic-mode-hook #'rainbow-delimiters-mode))
+
+;;; julia
+(setq org-babel-julia-command "julia -e 'include(\"$(ENV[\"HOME\"])/.julia/config/startup-babel.jl\")' -i")
+(setq inferior-julia-args "-e include(\"$(ENV[\"HOME\"])/.julia/config/startup-babel.jl\") -i")
+
+;;; clojure
+(after! clojure-mode (require 'flycheck-clj-kondo))
+(add-to-list '+format-on-save-enabled-modes 'clojure-mode t)
+(add-to-list '+format-on-save-enabled-modes 'clojurescript-mode t)
+(set-popup-rule! "\\*cider-scratch\\*" :ttl nil :quit nil)
+(add-hook! 'clojure-mode-hook :local (setq writeroom-width 120))
