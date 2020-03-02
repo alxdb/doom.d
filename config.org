@@ -1,0 +1,130 @@
+#+TITLE: alxdb's Doom Configuration
+#+AUTHOR: alxdb
+
+#+PROPERTY: header-args :results silent
+
+* base
+** identity
+Some functionality uses this to identify you, e.g. GPG configuration, email
+clients, file templates and snippets.
+
+#+BEGIN_SRC emacs-lisp
+(setq user-full-name "Alexander Davidson Bryan"
+      user-mail-address "alxdavbr@gmail.com")
+#+END_SRC
+
+** visuals
+*** fonts
+Doom exposes five (optional) variables for control
+are the three important ones:
+
++ `doom-font'
++ `doom-variable-pitch-font'
++ `doom-big-font' -- used for `doom-big-font-mode'
+
+#+BEGIN_SRC emacs-lisp
+(setq doom-font (font-spec :family "monospace" :size 20))
+#+END_SRC
+
+*** theme
+There are two ways to load a theme. Both assume the theme is installed and
+available. You can either set ~doom-theme~ or manually load a theme with the
+~load-theme~ function.
+
+#+BEGIN_SRC emacs-lisp
+(setq doom-theme 'doom-gruvbox)
+#+END_SRC
+
+This block tweaks the ~doom-gruvbox~ theme after it loads. If tweaking before,
+it seems some changes get overwritten when the load happens.
+
+#+BEGIN_SRC emacs-lisp
+(add-hook! 'doom-load-theme-hook :append
+ (doom-themes-set-faces 'doom-gruvbox
+    '(default :background "#282828")
+    '(solaire-default-face :background "#1d2021")
+    '(mode-line :background "#3a3a3a")
+    '(font-lock-preprocessor-face :foreground "#ff8700")))
+#+END_SRC
+
+*** line numbers
+if you want to change the style of line numbers, change this to ~relative~ or
+~nil~ to disable it:
+
+#+BEGIN_SRC emacs-lisp
+(setq display-line-numbers-type 'relative)
+#+END_SRC
+
+** directories
+*** org
+Where org files are saved to by default.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-directory "~/doc/org/")
+#+END_SRC
+
+*** projectile
+Where projectile searches for known projects.
+
+#+BEGIN_SRC emacs-lisp
+(setq projectile-project-search-path '("~/src/"))
+#+END_SRC
+
+* modules
+** ui
+*** workspaces
+Always create a new workspace when switching project. Default behaviour is to
+use the main workspace for the first project opened.
+
+#+BEGIN_SRC emacs-lisp
+(setq +workspaces-on-switch-project-behavior t)
+#+END_SRC
+
+*** zen
+Don't scale the text when in zen mode, there's no need.
+
+#+BEGIN_SRC emacs-lisp
+(setq +zen-text-scale 0)
+#+END_SRC
+
+Make the width of the centred area a bit bigger.
+
+#+BEGIN_SRC emacs-lisp
+(setq writeroom-width 120)
+#+END_SRC
+
+** lang
+*** rust
+Don't use rainbow delimiters, it messes with macros.
+
+#+BEGIN_SRC emacs-lisp
+(after! rustic
+ (remove-hook 'rustic-mode-hook #'rainbow-delimiters-mode))
+#+END_SRC
+
+*** julia
+~julia-ob~ doesn't work very well at all. This hack helps a bit.
+
+#+BEGIN_SRC emacs-lisp
+(setq org-babel-julia-command "julia -e 'include(\"$(ENV[\"HOME\"])/.julia/config/startup-babel.jl\")' -i")
+(setq inferior-julia-args "-e include(\"$(ENV[\"HOME\"])/.julia/config/startup-babel.jl\") -i")
+#+END_SRC
+
+*** clojure
+Use ~clj-kondo~ instead of ~joker~.
+
+#+BEGIN_SRC emacs-lisp
+(after! clojure-mode (require 'flycheck-clj-kondo))
+#+END_SRC
+
+Don't auto format clojure, I edit a lot of files which don't necessarily need formatting.
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list '+format-on-save-enabled-modes 'clojure-mode t)
+(add-to-list '+format-on-save-enabled-modes 'clojurescript-mode t)
+#+END_SRC
+
+Don't delete the ~cider-scratch~ buffer when closing the window containing it.
+#+BEGIN_SRC  emacs-lisp
+(set-popup-rule! "\\*cider-scratch\\*" :ttl nil :quit nil)
+#+END_SRC
