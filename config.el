@@ -26,7 +26,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-one)
-;; (setq doom-font (font-spec :family "Fira Mono" :size 12))
+(setq doom-font (font-spec :family "PT Mono" :size 12))
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -52,3 +52,8 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(setq c-offsets-alist '((innamespace . 0)
+                        (inclass . +)))
+
+(setq-hook! 'c++-mode-hook c-basic-offset 2)
