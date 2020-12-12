@@ -56,7 +56,7 @@
  (javascript +lsp)
  markdown
  org
- (python +lsp +pyright)
+ (python +lsp +pyright +poetry)
  rust
  sh
  web
