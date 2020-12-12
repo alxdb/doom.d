@@ -3,14 +3,7 @@
 (setq user-full-name "Alexander Davidson Bryan"
       user-mail-address "alxdb@pm.me")
 
-(defun auto-dark-emacs/is-dark-mode-osascript ()
-  "Invoke applescript using Emacs using external shell command; this is less efficient, but works for non-GUI emacs"
-
-  (string-equal "true" (string-trim (shell-command-to-string "osascript -e 'tell application \"System Events\" to tell appearance preferences to return dark mode'"))))
-
-(if (auto-dark-emacs/is-dark-mode-osascript)
-  (setq doom-theme 'doom-one)
-  (setq doom-theme 'doom-one-light))
+(setq doom-theme 'doom-one)
 
 
 (setq doom-font (font-spec :family "SF Mono" :size 12))
