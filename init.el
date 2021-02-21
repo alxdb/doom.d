@@ -13,6 +13,7 @@
  modeline
  ophints
  (popup +defaults)
+ treemacs
  vc-gutter
  vi-tilde-fringe
  workspaces
@@ -22,6 +23,8 @@
  file-templates
  fold
  (format +onsave)
+ lispy
+ parinfer
  snippets
 
  :emacs
@@ -52,12 +55,15 @@
  (cc +lsp)
  clojure
  emacs-lisp
+ (elm +lsp)
+ (haskell +lsp)
  json
  (javascript +lsp)
  markdown
  org
+ (purescript +lsp)
  (python +lsp +pyright +poetry)
- rust
+ (rust +lsp)
  sh
  web
  yaml
