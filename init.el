@@ -1,0 +1,59 @@
+;;; init.el -*- lexical-binding: t; -*-
+
+(doom!
+ :completion
+ company
+ ivy
+
+ :ui
+ doom
+ doom-dashboard
+ doom-quit
+ (emoji +unicode)
+ hl-todo
+ modeline
+ nav-flash
+ ophints
+ (popup +defaults)
+ treemacs
+ vc-gutter
+ vi-tilde-fringe
+ workspaces
+ zen
+
+ :editor
+ (evil +everywhere)
+ file-templates
+ fold
+ snippets
+
+ :emacs
+ dired
+ electric
+ ibuffer
+ undo
+ vc
+
+ :term
+ vterm
+
+ :checkers
+ syntax
+
+ :tools
+ (debugger +lsp)
+ docker
+ editorconfig
+ lsp
+ (eval +overlay)
+ lookup
+ magit
+
+ :lang
+ emacs-lisp
+ markdown
+ org
+ sh
+
+ :config
+ (default +bindings +smartparens))
