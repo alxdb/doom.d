@@ -54,6 +54,7 @@
  markdown
  org
  sh
+ (web +lsp)
 
  :config
  (default +bindings +smartparens))
