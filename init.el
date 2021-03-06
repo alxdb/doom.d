@@ -53,6 +53,7 @@
 
  :lang
  emacs-lisp
+ (javascript +lsp)
  markdown
  nix
  org
