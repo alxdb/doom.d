@@ -9,3 +9,6 @@
 (setq doom-theme 'doom-nord)
 
 (set-evil-initial-state! '(vterm-mode term-mode) 'emacs)
+
+(setq-hook! 'typescript-tsx-mode-hook
+  +format-with-lsp nil)
