@@ -12,3 +12,11 @@
 
 (setq-hook! 'typescript-tsx-mode-hook
   +format-with-lsp nil)
+
+;; treemacs
+(setq doom-themes-treemacs-enable-variable-pitch nil)
+(setq doom-themes-treemacs-theme 'doom-colors)
+
+; https://github.com/emacs-lsp/lsp-treemacs/issues/89
+(with-eval-after-load 'lsp-treemacs
+  (load-library "doom-themes-ext-treemacs"))
