@@ -7,3 +7,5 @@
       doom-variable-pitch-font (font-spec :family "sans" :size 22))
 
 (setq doom-theme 'doom-nord)
+
+(set-evil-initial-state! '(vterm-mode term-mode) 'emacs)
