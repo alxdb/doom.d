@@ -8,6 +8,8 @@
 
 (setq doom-theme 'doom-nord)
 
+(setq! doom-modeline-height 50)
+
 (set-evil-initial-state! '(vterm-mode term-mode) 'emacs)
 
 (setq-hook! 'typescript-tsx-mode-hook
