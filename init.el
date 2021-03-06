@@ -42,6 +42,7 @@
 
  :tools
  (debugger +lsp)
+ direnv
  docker
  editorconfig
  lsp
@@ -52,6 +53,7 @@
  :lang
  emacs-lisp
  markdown
+ nix
  org
  sh
  (web +lsp)
