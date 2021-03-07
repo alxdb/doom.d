@@ -8,6 +8,11 @@
 
 (setq doom-theme 'doom-nord)
 
+(custom-set-faces!
+  '(default :background "#181B21")
+  '(solaire-default-face :background "#181B21")
+  '(whitespace-tab :background "#22272f"))
+
 (setq! doom-modeline-height 50)
 
 (set-evil-initial-state! '(vterm-mode term-mode) 'emacs)
