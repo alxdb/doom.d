@@ -52,6 +52,7 @@
  magit
 
  :lang
+ (cc +lsp)
  emacs-lisp
  (javascript +lsp)
  markdown

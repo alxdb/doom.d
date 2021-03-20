@@ -27,3 +27,7 @@
 ; https://github.com/emacs-lsp/lsp-treemacs/issues/89
 (with-eval-after-load 'lsp-treemacs
   (load-library "doom-themes-ext-treemacs"))
+
+(setq-hook! 'c++-mode-hook
+  c-basic-offset 2
+  +format-with-lsp nil)
