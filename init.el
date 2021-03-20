@@ -58,6 +58,7 @@
  markdown
  nix
  org
+ (python +lsp +pyright +poetry)
  sh
  (web +lsp)
 
