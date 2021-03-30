@@ -17,7 +17,7 @@
 
 (set-evil-initial-state! '(vterm-mode term-mode) 'emacs)
 
-(setq-hook! 'typescript-tsx-mode-hook
+(setq-hook! '(typescript-tsx-mode-hook yaml-mode-hook c++-mode-hook)
   +format-with-lsp nil)
 
 ;; treemacs
@@ -29,5 +29,4 @@
   (load-library "doom-themes-ext-treemacs"))
 
 (setq-hook! 'c++-mode-hook
-  c-basic-offset 2
-  +format-with-lsp nil)
+  c-basic-offset 2)

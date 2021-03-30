@@ -61,6 +61,7 @@
  (python +lsp +pyright +poetry)
  sh
  (web +lsp)
+ (yaml +lsp)
 
  :config
  (default +bindings +smartparens))
