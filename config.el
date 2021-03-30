@@ -30,3 +30,5 @@
 
 (setq-hook! 'c++-mode-hook
   c-basic-offset 2)
+
+(setq lsp-clojure-custom-server-command '("bash" "-c" "clojure-lsp"))

@@ -53,6 +53,7 @@
 
  :lang
  (cc +lsp)
+ (clojure +lsp)
  emacs-lisp
  (javascript +lsp)
  markdown
