@@ -44,3 +44,4 @@
          additional-insert
          additional-wrap))
 
+(setq! projectile-project-search-path '("~/github/alxdb"))
