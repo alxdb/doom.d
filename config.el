@@ -32,3 +32,15 @@
   c-basic-offset 2)
 
 (setq lsp-clojure-custom-server-command '("bash" "-c" "clojure-lsp"))
+
+(setq! lispyville-key-theme
+       '((operators normal)
+         c-w
+         (prettify insert)
+         (atom-movement t)
+         slurp/barf-lispy
+         wrap
+         additional
+         additional-insert
+         additional-wrap))
+

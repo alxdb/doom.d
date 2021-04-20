@@ -26,6 +26,7 @@
  file-templates
  fold
  (format +onsave)
+ lispy
  snippets
 
  :emacs
