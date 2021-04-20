@@ -60,6 +60,7 @@
  nix
  org
  (python +lsp +pyright +poetry)
+ (rust +lsp)
  sh
  (web +lsp)
  (yaml +lsp)
