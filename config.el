@@ -46,6 +46,8 @@
          additional-wrap))
 
 (setq! projectile-project-search-path '("~/github/alxdb"))
+(projectile-discover-projects-in-search-path)
+
 
 (setq-hook! 'clojure-mode-hook
   lsp-ui-sideline-show-code-actions nil)
