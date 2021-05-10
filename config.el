@@ -11,7 +11,8 @@
 (custom-set-faces!
   '(default :background "#181B21")
   '(solaire-default-face :background "#181B21")
-  '(whitespace-tab :background "#22272f"))
+  '(whitespace-tab :background "#22272f")
+  '(font-lock-variable-name-face :foreground "#D8DEE9" :weight bold))
 
 (setq! doom-modeline-height 50)
 
