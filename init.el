@@ -17,6 +17,7 @@
  vc-gutter
  vi-tilde-fringe
  workspaces
+ zen
 
  :editor
  (evil +everywhere)
@@ -59,6 +60,7 @@
  (haskell +lsp)
  json
  (javascript +lsp)
+ (kotlin +lsp)
  markdown
  org
  (purescript +lsp)
