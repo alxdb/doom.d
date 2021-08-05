@@ -56,13 +56,16 @@
  (cc +lsp)
  (clojure +lsp)
  emacs-lisp
+ (go +lsp)
  (haskell +lsp)
+ (java +lsp)
  (javascript +lsp)
  markdown
  nix
  org
  (python +lsp +pyright +poetry)
  (rust +lsp)
+ (scala +lsp)
  sh
  (web +lsp)
  (yaml +lsp)

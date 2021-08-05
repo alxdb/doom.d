@@ -21,13 +21,15 @@
 (setq-hook! '(typescript-tsx-mode-hook yaml-mode-hook c++-mode-hook)
   +format-with-lsp nil)
 
+(add-to-list '+format-on-save-enabled-modes 'go-mode t)
+
 ;; treemacs
 (setq! doom-themes-treemacs-enable-variable-pitch nil)
 (setq! doom-themes-treemacs-theme 'doom-colors)
 
 ;; https://github.com/emacs-lsp/lsp-treemacs/issues/89
-(with-eval-after-load 'lsp-treemacs
-  (load-library "doom-themes-ext-treemacs"))
+;; (with-eval-after-load 'lsp-treemacs
+;;   (load-library "doom-themes-ext-treemacs"))
 
 (setq-hook! 'c++-mode-hook
   c-basic-offset 2)
@@ -48,6 +50,13 @@
 (setq! projectile-project-search-path '("~/github/alxdb"))
 (projectile-discover-projects-in-search-path)
 
+;; fixes error on +vterm/here, needs fixing upstream
+;; (setq vterm-buffer-name "vterm")
 
 (setq-hook! 'clojure-mode-hook
   lsp-ui-sideline-show-code-actions nil)
+
+(map! :map dired-mode-map
+      :n "K" #'dired-kill-subdir)
+
+(setq! treemacs-collapse-dirs 8)
