@@ -25,7 +25,6 @@
  fold
  (format +onsave)
  lispy
- parinfer
  snippets
 
  :emacs
@@ -42,6 +41,7 @@
  spell
 
  :tools
+ direnv
  (eval +overlay)
  lookup
  lsp
@@ -62,9 +62,9 @@
  (javascript +lsp)
  (kotlin +lsp)
  markdown
- org
+ (org +jupyter)
  (purescript +lsp)
- (python +lsp +pyright +poetry)
+ (python +lsp +pyright)
  (rust +lsp)
  sh
  web
