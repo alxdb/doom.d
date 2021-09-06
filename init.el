@@ -40,6 +40,7 @@
        syntax
 
        :tools
+       direnv
        (eval +overlay)
        lookup
        lsp
@@ -50,10 +51,15 @@
        (:if IS-MAC macos)
 
        :lang
+       (cc +lsp)
        emacs-lisp
+       javascript
        markdown
        org
+       (python +poetry +lsp)
+       (rust +lsp)
        sh
+       web
 
        :config
        (default +bindings +smartparens))

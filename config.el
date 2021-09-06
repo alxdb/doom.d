@@ -9,3 +9,18 @@
 
 (setq all-the-icons-scale-factor 1.0
       doom-modeline-height 44)
+
+(setq flycheck-python-mypy-config `("mypy.ini" "setup.cfg" "pyproject.toml"))
+
+(use-package! web-mode
+  :config
+  (set-formatter! 'html-tidy
+    '("tidy" "-q" "-indent"
+      "--tidy-mark" "no"
+      "--drop-empty-elements" "no"
+      "--wrap" "120"
+      ("--show-body-only" "%s" (if +format-region-p "true" "auto"))
+      ("--indent-spaces" "%d" tab-width)
+      ("--indent-with-tabs" "%s" (if indent-tabs-mode "yes" "no"))
+      ("-xml" (memq major-mode '(nxml-mode xml-mode))))
+    :ok-statuses '(0 1)))
