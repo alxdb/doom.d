@@ -1,5 +1,8 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+;; Not picked up by `doom env' for some reason...
+(setenv "SSH_AUTH_SOCK" (concat (getenv "XDG_RUNTIME_DIR") "/ssh-agent.socket"))
+
 (setq user-full-name "Alexander Davidson Bryan"
       user-mail-address "alxdb@pm.me")
 
