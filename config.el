@@ -13,7 +13,9 @@
 (setq all-the-icons-scale-factor 1.0
       doom-modeline-height 44)
 
-(setq flycheck-python-mypy-config `("mypy.ini" "setup.cfg" "pyproject.toml"))
+(setq-hook! python-mode
+  flycheck-checker 'python-mypy
+  flycheck-python-mypy-config '("mypy.ini" "setup.cfg" "pyproject.toml"))
 
 (use-package! web-mode
   :config
