@@ -44,7 +44,7 @@
        (eval +overlay)
        lookup
        lsp
-       magit
+       (magit +forge)
        make
 
        :os
@@ -53,6 +53,7 @@
        :lang
        (cc +lsp)
        emacs-lisp
+       (haskell +lsp)
        javascript
        markdown
        org
@@ -60,6 +61,7 @@
        (rust +lsp)
        sh
        web
+       (yaml +lsp)
 
        :config
        (default +bindings +smartparens))
