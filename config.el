@@ -17,13 +17,13 @@
   flycheck-checker 'python-mypy
   flycheck-python-mypy-config '("mypy.ini" "setup.cfg" "pyproject.toml"))
 
-(use-package! web-mode
-  :config
+(after! web-mode
   (set-formatter! 'html-tidy
     '("tidy" "-q" "-indent"
       "--tidy-mark" "no"
       "--drop-empty-elements" "no"
       "--wrap" "120"
+      "--custom-tags" "blocklevel"
       ("--show-body-only" "%s" (if +format-region-p "true" "auto"))
       ("--indent-spaces" "%d" tab-width)
       ("--indent-with-tabs" "%s" (if indent-tabs-mode "yes" "no"))
