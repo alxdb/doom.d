@@ -40,11 +40,13 @@
        syntax
 
        :tools
+       debugger
        direnv
+       ein
        (eval +overlay)
        lookup
        lsp
-       (magit +forge)
+       magit
        make
 
        :os
@@ -55,10 +57,11 @@
        emacs-lisp
        (haskell +lsp)
        javascript
+       json
        markdown
-       org
-       (python +poetry +lsp)
+       nix
        (org +jupyter +brain)
+       (python +lsp)
        (rust +lsp)
        sh
        web
