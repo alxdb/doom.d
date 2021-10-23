@@ -58,6 +58,7 @@
        (haskell +lsp)
        javascript
        json
+       (julia +lsp)
        markdown
        nix
        (org +jupyter +brain)
