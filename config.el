@@ -36,3 +36,22 @@
       ("--indent-with-tabs" "%s" (if indent-tabs-mode "yes" "no"))
       ("-xml" (memq major-mode '(nxml-mode xml-mode))))
     :ok-statuses '(0 1)))
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (python . t)
+   (c . t)
+   (haskell . t)
+   (jupyter . t)))
+
+(plist-put! org-format-latex-options :scale 2)
+
+;; Use monospace font for specific ligature characters
+(add-hook! 'after-setting-font-hook :append
+  ;; λ
+  (set-fontset-font t #x03BB '("monospace" . "iso10646-1")))
+
+(setq! lsp-haskell-formatting-provider "brittany")
+(set-formatter! 'cabal-fmt "cabal-fmt" :modes '(haskell-cabal-mode))
+

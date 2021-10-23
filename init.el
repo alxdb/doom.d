@@ -58,6 +58,7 @@
        markdown
        org
        (python +poetry +lsp)
+       (org +jupyter +brain)
        (rust +lsp)
        sh
        web
