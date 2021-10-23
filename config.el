@@ -55,3 +55,4 @@
 (setq! lsp-haskell-formatting-provider "brittany")
 (set-formatter! 'cabal-fmt "cabal-fmt" :modes '(haskell-cabal-mode))
 
+(setq! lsp-rust-analyzer-proc-macro-enable t)
