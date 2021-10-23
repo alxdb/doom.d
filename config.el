@@ -13,9 +13,16 @@
 (setq all-the-icons-scale-factor 1.0
       doom-modeline-height 44)
 
-(setq-hook! python-mode
-  flycheck-checker 'python-mypy
-  flycheck-python-mypy-config '("mypy.ini" "setup.cfg" "pyproject.toml"))
+(setq! flycheck-python-mypy-config '("mypy.ini" "setup.cfg" "pyproject.toml"))
+(setq! lsp-pylsp-plugins-pydocstyle-enabled nil)
+;; Cannot seem to make this python specific
+;; should be ignored for other languages, but still messy
+;; https://github.com/flycheck/flycheck/issues/1762
+;; (add-hook! lsp-pylsp-after-open-hook
+;;   (flycheck-add-next-checker 'lsp 'python-mypy))
+(defadvice! add-mypy-checker-after-lsp ()
+  :after #'lsp-diagnostics-flycheck-enable
+  (flycheck-add-next-checker 'lsp 'python-mypy))
 
 (after! web-mode
   (set-formatter! 'html-tidy
