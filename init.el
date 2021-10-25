@@ -54,6 +54,7 @@
 
        :lang
        (cc +lsp)
+       (clojure +lsp)
        emacs-lisp
        (haskell +lsp)
        javascript
