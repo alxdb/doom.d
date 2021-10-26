@@ -19,6 +19,7 @@
        vc-gutter
        vi-tilde-fringe
        workspaces
+       zen
 
        :editor
        (evil +everywhere)
