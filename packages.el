@@ -1,4 +1,4 @@
 ;;; $DOOMDIR/packages.el -*- no-byte-compile: t; -*-
 
-(package! wgls-mode
+(package! wgsl-mode
   :recipe (:host github :repo "acowley/wgsl-mode"))
