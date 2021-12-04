@@ -48,11 +48,21 @@
 (plist-put! org-format-latex-options :scale 2)
 
 ;; Use monospace font for specific ligature characters
+;; λ
 (add-hook! 'after-setting-font-hook :append
-  ;; λ
   (set-fontset-font t #x03BB '("monospace" . "iso10646-1")))
 
 (setq! lsp-haskell-formatting-provider "brittany")
 (set-formatter! 'cabal-fmt "cabal-fmt" :modes '(haskell-cabal-mode))
 
 (setq! lsp-rust-analyzer-proc-macro-enable t)
+(setq-hook! 'c++-mode-hook
+  c-basic-offset 2)
+
+(add-hook! 'c++-mode-hook :append
+  (defun set-c-offsets-alist ()
+    (setf (alist-get 'innamespace c-offsets-alist) 0)
+    (setf (alist-get 'access-label c-offsets-alist) '-)
+    (setf (alist-get 'inclass c-offsets-alist) '+)
+    (setf (alist-get 'topmost-intro c-offsets-alist) 0))
+  )

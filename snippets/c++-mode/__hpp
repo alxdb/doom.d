@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# group: file templates
+# contributor: Alexander Davidson Bryan
+# --
+#pragma once
+
+$0

@@ -43,6 +43,7 @@
        :tools
        debugger
        direnv
+       editorconfig
        ein
        (eval +overlay)
        lookup
