@@ -54,6 +54,7 @@
  emacs-lisp
  markdown
  org
+ (scala +lsp)
  sh
 
  :config
