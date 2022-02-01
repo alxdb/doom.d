@@ -12,3 +12,9 @@
   '(default :foreground "#cfd7e5"))
 
 (setq display-line-numbers-type t)
+
+(setq org-directory "~/Documents/org/")
+
+(after! evil (evil-set-initial-state 'vterm-mode 'emacs))
+
+(setq treemacs-collapse-dirs 10)
