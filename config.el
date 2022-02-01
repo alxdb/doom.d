@@ -3,8 +3,8 @@
 (setq user-full-name "Alexander Davidson Bryan"
       user-mail-address "alxdb@pm.me")
 
-(setq doom-font (font-spec :family "Input Mono Condensed" :size 13)
-      doom-variable-pitch-font (font-spec :family "Input Sans Condensed" :size 15))
+(setq doom-font (font-spec :family "Iosevka" :size 13)
+      doom-variable-pitch-font (font-spec :family "Input Serif Condensed" :size 15))
 
 (setq doom-theme 'doom-one)
 
