@@ -11,9 +11,14 @@
       doom-modeline-height 44)
 
 (setq org-directory "~/org/"
-      projectile-project-search-path "~/src/")
+      projectile-project-search-path '("~/src/"))
 
 (setq +workspaces-on-switch-project-behavior t
       projectile-indexing-method 'alien)
 
-(set-evil-initial-state! '(vterm-mode term-mode) 'emacs)
+(after! evil
+  (set-evil-initial-state! '(vterm-mode term-mode) 'emacs))
+
+(setq lsp-lens-enable nil)
+
+(setq treemacs-collapse-dirs 8)

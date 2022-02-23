@@ -16,11 +16,13 @@
        vc-gutter
        vi-tilde-fringe
        workspaces
+       zen
 
        :editor
        (evil +everywhere)
        file-templates
        fold
+       format
        snippets
 
        :emacs
@@ -38,12 +40,16 @@
        :tools
        (eval +overlay)
        lookup
+       (lsp +peek)
        magit
 
        :lang
+       (cc +lsp)
+       (clojure +lsp)
        emacs-lisp
        markdown
        org
+       (rust +lsp)
        sh
 
        :config
