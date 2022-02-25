@@ -47,6 +47,7 @@
        (cc +lsp)
        (clojure +lsp)
        emacs-lisp
+       (go +lsp)
        markdown
        org
        (rust +lsp)
