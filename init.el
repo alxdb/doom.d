@@ -51,9 +51,11 @@
  macos
 
  :lang
+ (cc +lsp)
  emacs-lisp
  markdown
  org
+ (rust +lsp)
  (scala +lsp)
  sh
 
