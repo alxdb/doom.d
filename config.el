@@ -16,7 +16,7 @@
 (setq! display-line-numbers-type t)
 
 (setq! org-directory "~/Documents/org/"
-       projectile-project-search-path "~/Projects")
+       projectile-project-search-path '("~/Projects"))
 
 (set-evil-initial-state! 'vterm-mode 'emacs)
 
