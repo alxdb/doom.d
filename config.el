@@ -8,10 +8,8 @@
 
 (setq doom-theme 'doom-one)
 
-(custom-set-faces!
-  '(default
-     :foreground "#cfd7e5"
-     :background "#20232b"))
+(custom-theme-set-faces! 'doom-one
+  '(default :foreground "#cfd7e5" :background "#20232b"))
 
 (setq! display-line-numbers-type t)
 
