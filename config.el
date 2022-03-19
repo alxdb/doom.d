@@ -18,6 +18,6 @@
 
 (set-evil-initial-state! 'vterm-mode 'emacs)
 
-(setq! treemacs-collapse-dirs 10)
+(setq treemacs-collapse-dirs 10)
 
-(setq! lsp-lens-enable nil)
+(setq lsp-lens-enable nil)
