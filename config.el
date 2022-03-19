@@ -3,21 +3,19 @@
 (setq! user-full-name "Alexander Davidson Bryan"
        user-mail-address "alxdb@pm.me")
 
-(setq doom-font (font-spec :family "Iosevka" :size 13)
-      doom-variable-pitch-font (font-spec :family "Iosevka" :size 13))
-
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-one
+      doom-font (font-spec :family "Iosevka" :size 14)
+      doom-variable-pitch-font (font-spec :family "Iosevka Aile" :size 14))
 
 (custom-theme-set-faces! 'doom-one
   '(default :foreground "#cfd7e5" :background "#20232b"))
 
-(setq! display-line-numbers-type t)
-
-(setq! org-directory "~/Documents/org/"
+(setq! display-line-numbers-type t
+       org-directory "~/Documents/org/"
        projectile-project-search-path '("~/Projects"))
 
-(set-evil-initial-state! 'vterm-mode 'emacs)
+(setq treemacs-collapse-dirs 10
+      lsp-lens-enable nil)
 
-(setq treemacs-collapse-dirs 10)
-
-(setq lsp-lens-enable nil)
+(add-hook! 'evil-local-mode-hook
+  (evil-set-initial-state 'vterm-mode 'emacs))
