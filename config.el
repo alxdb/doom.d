@@ -3,10 +3,10 @@
 (setq user-full-name "Alexander Davidson Bryan"
       user-mail-address "alxdb@pm.me")
 
-(setq doom-font (font-spec :family "monospace" :size 20)
-      doom-variable-pitch-font (font-spec :family "sans" :size 20))
+(setq doom-font (font-spec :family "monospace" :size 26)
+      doom-variable-pitch-font (font-spec :family "monospace" :size 26))
 
-(setq doom-theme 'doom-one
+(setq doom-theme 'one-dark
       all-the-icons-scale-factor 1.0
       doom-modeline-height 44)
 
@@ -17,7 +17,8 @@
       projectile-indexing-method 'alien)
 
 (after! evil
-  (set-evil-initial-state! '(vterm-mode term-mode) 'emacs))
+  (set-evil-initial-state! '(vterm-mode term-mode) 'emacs)
+  (map! :n "C-]" #'+lookup/definition))
 
 (setq lsp-lens-enable nil)
 

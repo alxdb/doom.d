@@ -22,7 +22,7 @@
        (evil +everywhere)
        file-templates
        fold
-       format
+       (format +onsave)
        snippets
 
        :emacs
@@ -38,18 +38,22 @@
        syntax
 
        :tools
+       (debugger +lsp)
        (eval +overlay)
        lookup
        (lsp +peek)
-       magit
+       (magit +forge)
+       tree-sitter
 
        :lang
-       (cc +lsp)
+       (cc +lsp +tree-sitter)
        (clojure +lsp)
+       (dart +lsp +flutter)
        emacs-lisp
        (go +lsp)
        markdown
        org
+       (python +lsp +pyright +pyenv)
        (rust +lsp)
        sh
 
