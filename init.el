@@ -10,7 +10,7 @@
  doom-dashboard
  doom-quit
  hl-todo
- ligatures
+ (ligatures +extra)
  modeline
  ophints
  (popup +defaults)
@@ -24,7 +24,7 @@
  (evil +everywhere)
  file-templates
  fold
- format
+ (format +onsave)
  snippets
 
  :emacs
@@ -46,16 +46,19 @@
  lookup
  lsp
  magit
+ tree-sitter
 
  :os
  macos
 
  :lang
- (cc +lsp)
+ (cc +lsp +tree-sitter)
  emacs-lisp
  markdown
+ (ocaml +lsp +tree-sitter)
  org
- (rust +lsp)
+ (python +lsp +pyright +tree-sitter)
+ (rust +lsp +tree-sitter)
  (scala +lsp)
  sh
 
