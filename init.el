@@ -55,7 +55,7 @@
  (cc +lsp +tree-sitter)
  emacs-lisp
  markdown
- (ocaml +lsp +tree-sitter)
+ (ocaml +lsp)
  org
  (python +lsp +pyright +tree-sitter)
  (rust +lsp +tree-sitter)
