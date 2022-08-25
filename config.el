@@ -20,6 +20,18 @@
   (set-evil-initial-state! '(vterm-mode term-mode) 'emacs)
   (map! :n "C-]" #'+lookup/definition))
 
-(setq lsp-lens-enable nil)
+(after! lsp-clangd
+  (setq lsp-clients-clangd-args
+        '("-j=8"
+          "--background-index"
+          "--clang-tidy"
+          "--completion-style=detailed"
+          "--header-insertion=never"
+          "--header-insertion-decorators=0"))
+  (set-lsp-priority! 'clangd 2))
 
-(setq treemacs-collapse-dirs 8)
+(after! lsp-mode
+  (setq lsp-lens-enable nil))
+
+(after! treemacs
+  (setq treemacs-collapse-dirs 8))
