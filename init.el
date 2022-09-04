@@ -10,7 +10,7 @@
  doom-dashboard
  doom-quit
  hl-todo
- (ligatures +extra)
+ ;; (ligatures +extra)
  modeline
  ophints
  (popup +defaults)
@@ -54,6 +54,7 @@
  :lang
  (cc +lsp +tree-sitter)
  emacs-lisp
+ (javascript +lsp +tree-sitter)
  markdown
  (ocaml +lsp)
  org
