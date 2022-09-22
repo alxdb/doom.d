@@ -4,8 +4,8 @@
       user-mail-address "alxdb@pm.me")
 
 (setq doom-theme 'one-dark
-      doom-font (font-spec :family "monospace" :size 26)
-      doom-variable-pitch-font (font-spec :family "monospace" :size 26)
+      doom-font "monospace:pixelsize=24:antialias=on"
+      doom-variable-pitch-font "monospace:pixelsize=24:antialias=on"
       all-the-icons-scale-factor 1.0
       doom-modeline-height 44)
 
@@ -31,8 +31,13 @@
           "--header-insertion-decorators=0"))
   (set-lsp-priority! 'clangd 2))
 
+(after! writeroom-mode
+  (setq +zen-text-scale 0
+        writeroom-width 100))
+
 (after! lsp-mode
   (setq lsp-lens-enable nil))
 
+(setq +treemacs-git-mode 'deferred)
 (after! treemacs
   (setq treemacs-collapse-dirs 8))
