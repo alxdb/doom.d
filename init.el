@@ -54,7 +54,7 @@
        markdown
        org
        (python +lsp +pyright +pyenv)
-       (rust +lsp)
+       (rust +lsp +tree-sitter)
        sh
 
        :config
